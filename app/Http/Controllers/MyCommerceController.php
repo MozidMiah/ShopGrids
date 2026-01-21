@@ -16,5 +16,5 @@ class MyCommerceController extends Controller
 
     public function detail(){
         return view('website.detail.index');
-    }
+    } //ytgdufy
 }
