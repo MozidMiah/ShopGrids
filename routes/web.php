@@ -12,3 +12,14 @@ Route::get('/product-detail',[MyCommerceController::class, 'detail'])->name('pro
 Route::get('/show-cart',[CartController::class, 'index'])->name('show-cart');
 
 Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
