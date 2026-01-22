@@ -518,9 +518,7 @@ Online Super Shop
                                 <div class="product-image">
                                     <img src="assets/images/products/product-3.jpg" alt="#">
                                     <div class="button">
-                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i>
-                                            Add to
-                                            Cart</a>
+                                        <a href="{{ route('show-cart') }}" class="btn"><i class="lni lni-cart"></i>Add to Cart</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
