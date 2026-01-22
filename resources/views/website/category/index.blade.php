@@ -212,7 +212,7 @@
                       <div class="product-info">
                         <span class="category">Watches</span>
                         <h4 class="title">
-                          <a href="product-grids.html">Xiaomi Mi Band 5</a>
+                          <a href="{{ route('product-detail') }}">Xiaomi Mi Band 5</a>
                         </h4>
                         <ul class="review">
                           <li><i class="lni lni-star-filled"></i></li>
@@ -242,7 +242,7 @@
                       <div class="product-info">
                         <span class="category">Speaker</span>
                         <h4 class="title">
-                          <a href="product-grids.html">Bluetooth Speaker</a>
+                          <a href="{{ route('product-detail') }}">Bluetooth Speaker</a>
                         </h4>
                         <ul class="review">
                           <li><i class="lni lni-star-filled"></i></li>

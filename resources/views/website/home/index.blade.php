@@ -229,7 +229,7 @@ Online Super Shop
                         <div class="product-info">
                             <span class="category">Watches</span>
                             <h4 class="title">
-                                <a href="product-grids.html">Xiaomi Mi Band 5</a>
+                                <a href="{{ route('product-detail') }}">Xiaomi Mi Band 5</a>
                             </h4>
                             <ul class="review">
                                 <li><i class="lni lni-star-filled"></i></li>
@@ -382,7 +382,7 @@ Online Super Shop
                         <div class="product-info">
                             <span class="category">Speaker</span>
                             <h4 class="title">
-                                <a href="product-grids.html">Mini Bluetooth Speaker</a>
+                                <a href="{{ route('product-detail') }}">Mini Bluetooth Speaker</a>
                             </h4>
                             <ul class="review">
                                 <li><i class="lni lni-star-filled"></i></li>
@@ -526,7 +526,7 @@ Online Super Shop
                                 <div class="product-info">
                                     <span class="category">Camera</span>
                                     <h4 class="title">
-                                        <a href="product-grids.html">WiFi Security Camera</a>
+                                        <a href="{{ route('product-detail') }}">WiFi Security Camera</a>
                                     </h4>
                                     <ul class="review">
                                         <li><i class="lni lni-star-filled"></i></li>
