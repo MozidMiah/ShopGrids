@@ -18,8 +18,8 @@
                             <span class="hide-menu">Category Module</span>
                         </a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-calendar.html">Add Category</a></li>
-                                <li><a href="app-chat.html">Manage Category</a></li>
+                                <li><a href="{{ route('category.add') }}">Add Category</a></li>
+                                <li><a href="{{ route('category.manage') }}">Manage Category</a></li>
                             </ul>
                         </li>
                         <li> 

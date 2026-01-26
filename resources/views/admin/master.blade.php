@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/assets/images/favicon.png') }}">
+    
     <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
  @include('admin.includes.script')
 </head>

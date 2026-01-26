@@ -1,8 +1,10 @@
    <!-- This page CSS -->
     <!-- chartist CSS -->
+    <link href="{{ asset('admin/assets/node_modules/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" >
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/assets/images/favicon.png') }}">
     <link href="{{ asset('admin/assets/node_modules/morrisjs/morris.css') }}" rel="stylesheet">
     <!--Toaster Popup message CSS -->
-    <link href="{{ asset('admin/assets/node_modules/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('admin/assets/node_modules/toast-master/css/jquery.toast.css') }}" rel="stylesheet"> --}}
     <!-- Custom CSS -->
     <link href="{{ asset('admin/dist/css/style.min.css') }}" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
