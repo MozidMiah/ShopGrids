@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('body')
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -21,12 +21,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($categories as $category)
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$category->name}}</td>
+                                    <td>{{$category->description}}</td>
+                                    <td>{{$category->image}}</td>
+                                    <td>{{$category->status == 1 ? 'Published' : 'Unpublished'}}</td>
                                     <td>
                                         <a href="" class="btn btn-success btn-sm">
                                             <i class="ti-pencil"></i>
@@ -37,6 +38,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
