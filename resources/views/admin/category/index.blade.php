@@ -7,7 +7,9 @@
                 <div class="card-body">
                     <h4 class="card-title">Add Category Form</h4>
                     <hr />
-                    <form class="form-horizontal p-t-20">
+                    <h4 class="text-center text-success">{{session('message')}}</h4>
+                    <form class="form-horizontal p-t-20" action="{{ route('category.create') }}" method="POST">
+                        @csrf
                         <div class="form-group row">
                             <label for="exampleInputuname3" class="col-sm-3 control-label">Category Name <span
                                     class="text-danger">*</span></label>
@@ -26,7 +28,7 @@
                         <div class="form-group row">
                             <label class="form-label col-sm-3 control-label" for="web">Category Image</label>
                             <div class="col-sm-9">
-                                <input type="file" id="input-file-now" class="dropify" />
+                                <input type="file" name="image" id="input-file-now" class="dropify" />
                             </div>
                         </div>
                         <div class="form-group row">
