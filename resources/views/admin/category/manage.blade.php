@@ -26,7 +26,7 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->description}}</td>
-                                    <td>{{$category->image}}</td>
+                                    <td><img src="{{asset($category->image)}}" alt="{{$category->name}}" height="50" width="80"/></td>
                                     <td>{{$category->status == 1 ? 'Published' : 'Unpublished'}}</td>
                                     <td>
                                         <a href="" class="btn btn-success btn-sm">
