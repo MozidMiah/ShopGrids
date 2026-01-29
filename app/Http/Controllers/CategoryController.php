@@ -64,6 +64,27 @@ class CategoryController extends Controller
         }
     }
 
+    public function status($id){
+         $category = Category::where('id',$id)->first();
+         if($category->status == 1 ){
+           $category->update([
+            'status' => 2,
+        ]);
+         }
+         else{
+            $category->update([
+            'status' => 1,
+        ]);
+         }
+        
+        if ($category) {
+            return redirect()->route('category.index')->with('message', 'Category update Successfully.');
+        } else {
+            return back()->with('message', 'Category does not update.');
+        }
+
+    }
+
     public function delete($id)
     {
         $category = Category::where('id',$id)->delete();
