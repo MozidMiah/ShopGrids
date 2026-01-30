@@ -25,19 +25,23 @@ class CategoryController extends Controller
     // store the value
     public function store(Request $request)
     {
-        $category = Category::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status' => $request->status,
-            $imageUrl = getImageUrl($request, 'image', 'uploads/images/'),
+        $imageUrl = null;
 
-        ]);
-        if ($category) {
-            return redirect()->route('category.index')->with('message', 'Category Create Successfully.');
-        } else {
-            return back()->with('message', 'Category does not create.');
+        if ($request->hasFile('image')) {
+            $imageUrl = getImageUrl($request, 'image', 'uploads/images/');
         }
+
+        Category::create([
+            'name'        => $request->name,
+            'description' => $request->description,
+            'status'      => $request->status,
+            'image'       => $imageUrl,
+        ]);
+
+        return redirect()->route('category.index')
+            ->with('message', 'Category Created Successfully.');
     }
+
 
 
     // showing create page
@@ -52,10 +56,14 @@ class CategoryController extends Controller
     {
         $category = Category::find($request->id);
 
-        $imageUrl = $category->image; // keep old image by default
+            // $category = Category::where('id', $id)->first();
+       
 
         if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request, 'image', 'uploads/images/');
+            $imageUrl = getImageUrl($request->hasFile('image'), 'uploads/images/');
+        }else{
+             $imageUrl = $category->image; // keep old image by default
+
         }
 
         $update = $category->update([
