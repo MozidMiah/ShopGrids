@@ -1,8 +1,14 @@
 <?php
 
-function getImageUrl($file, $path)
+function getImageUrl($request, $fieldName, $path)
 {
-    $file->move($path, $file->getClientOriginalName());
-    $imageUrl     = $path . $file->getClientOriginalName();
-    return $imageUrl;
+    if (!$request->hasFile($fieldName)) {
+        return null;
+    }
+
+    $file = $request->file($fieldName);
+    $fileName = time() . '_' . $file->getClientOriginalName();
+    $file->move(public_path($path), $fileName);
+
+    return $path . $fileName;
 }

@@ -29,7 +29,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'status' => $request->status,
-            'image' => getImageUrl($request->file('image'),'upload/category-images/'),
+            $imageUrl = getImageUrl($request, 'image', 'uploads/images/'),
 
         ]);
         if ($category) {
@@ -40,55 +40,63 @@ class CategoryController extends Controller
     }
 
 
-     // showing create page
+    // showing create page
     public function edit($id)
     {
-        $category = Category::where('id',$id)->first();
-        return view('admin.category.edit',compact('category'));
+        $category = Category::where('id', $id)->first();
+        return view('admin.category.edit', compact('category'));
     }
 
     // store the value
     public function update(Request $request)
     {
-        $category = Category::where('id',$request->id)->update([
+        $category = Category::find($request->id);
+
+        $imageUrl = $category->image; // keep old image by default
+
+        if ($request->hasFile('image')) {
+            $imageUrl = getImageUrl($request, 'image', 'uploads/images/');
+        }
+
+        $update = $category->update([
             'name' => $request->name,
             'description' => $request->description,
             'status' => $request->status,
-            'image' => getImageUrl($request->file('image'),'upload/category-images/'),
-
+            'image' => $imageUrl,
         ]);
-        if ($category) {
-            return redirect()->route('category.index')->with('message', 'Category Create Successfully.');
+
+        if ($update) {
+            return redirect()->route('category.index')->with('message', 'Category Updated Successfully.');
         } else {
-            return back()->with('message', 'Category does not create.');
+            return back()->with('message', 'Category update failed.');
         }
     }
 
-    public function status($id){
-         $category = Category::where('id',$id)->first();
-         if($category->status == 1 ){
-           $category->update([
-            'status' => 2,
-        ]);
-         }
-         else{
+
+    public function status($id)
+    {
+        $category = Category::where('id', $id)->first();
+        if ($category->status == 1) {
             $category->update([
-            'status' => 1,
-        ]);
-         }
-        
+                'status' => 2,
+            ]);
+        } else {
+            $category->update([
+                'status' => 1,
+            ]);
+        }
+
         if ($category) {
             return redirect()->route('category.index')->with('message', 'Category update Successfully.');
         } else {
             return back()->with('message', 'Category does not update.');
         }
-
     }
 
     public function delete($id)
     {
-        $category = Category::where('id',$id)->delete();
-         if ($category) {
+        $category = Category::where('id', $id)->delete();
+        if ($category) {
             return redirect()->route('category.index')->with('message', 'Category delete Successfully.');
         } else {
             return back()->with('message', 'Category does not create.');

@@ -46,9 +46,7 @@
                                                 class="btn btn-info btn-sm">
                                                 <i class="ti-pencil"></i>
                                             </a>
-
-
-
+                                            
                                             <a href="{{ route('category.delete', $category->id) }}"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="ti-trash"></i>
