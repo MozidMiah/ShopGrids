@@ -13,14 +13,11 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                            <i class="ti-layout-grid2"></i>
-                            <span class="hide-menu">Category Module</span>
-                        </a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('category.create') }}">Add Category</a></li>
-                                <li><a href="{{ route('category.index') }}">Manage Category</a></li>
-                            </ul>
+                         <li> 
+                            <a class="waves-effect waves-dark {{ request()->is('category*') ? 'active' : '' }}" href="{{ route('category.index') }}" aria-expanded="false">
+                                <i class="icon-speedometer"></i>
+                                <span class="hide-menu">Manage Category</span>
+                            </a>
                         </li>
                         <li> 
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">

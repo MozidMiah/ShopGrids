@@ -25,10 +25,8 @@ class CategoryController extends Controller
     // store the value
     public function store(Request $request)
     {
-        $imageUrl = null;
-
         if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request, 'image', 'uploads/images/');
+            $imageUrl = getImageUrl($request->image, 'uploads/images/');
         }
 
         Category::create([
@@ -60,7 +58,7 @@ class CategoryController extends Controller
        
 
         if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request->hasFile('image'), 'uploads/images/');
+            $imageUrl = getImageUrl($request->image, 'uploads/images/');
         }else{
              $imageUrl = $category->image; // keep old image by default
 

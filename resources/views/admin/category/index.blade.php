@@ -1,13 +1,36 @@
 @extends('admin.master')
 
 @section('body')
+
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h4 class="text-themecolor">Dashboard</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-end">
+            <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb justify-content-end">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
     <div class="row mt-3">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Table</h4>
-                    <h6 class="card-subtitle">Data table example</h6>
-                    <hr />
+                    <div class="row ">
+                        <div class="col-md-5 align-self-center">
+                            <h4 class="card-title">Data Table</h4>
+                            <h6 class="card-subtitle">Data table example</h6>
+                        </div>
+                        <div class="col-md-7 align-self-center text-end">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="{{ route('category.create') }}" type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i
+                                        class="fa fa-plus-circle"></i> Create New</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="table-responsive m-t-40">
                         <table id="myTable" class="table table-striped border">
                             <thead>
@@ -41,12 +64,12 @@
                                                     <i class="ti-arrow-down"></i>
                                                 </a>
                                             @endif
-                                            
+
                                             <a href="{{ route('category.edit', $category->id) }}"
                                                 class="btn btn-info btn-sm">
                                                 <i class="ti-pencil"></i>
                                             </a>
-                                            
+
                                             <a href="{{ route('category.delete', $category->id) }}"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="ti-trash"></i>
