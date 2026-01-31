@@ -30,14 +30,10 @@
                             </ul>
                         </li>
                         <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="ti-palette"></i>
-                                <span class="hide-menu">Brand Module</span>
+                            <a class="waves-effect waves-dark {{ request()->is('Brand*') ? 'active' : '' }}" href="{{ route('brand.index') }}" aria-expanded="false">
+                                <i class="icon-speedometer"></i>
+                                <span class="hide-menu">Manage Brand</span>
                             </a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="ui-cards.html">Add Brand</a></li>
-                                <li><a href="ui-user-card.html">Manage Brand</a></li>
-                            </ul>
                         </li>
                         <li> 
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
