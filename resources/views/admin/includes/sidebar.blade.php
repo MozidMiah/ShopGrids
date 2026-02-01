@@ -20,14 +20,10 @@
                             </a>
                         </li>
                         <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="ti-email"></i>
+                            <a class="waves-effect waves-dark {{ request()->is('sub-category*') ? 'active' : '' }}" href="{{ route('sub-category.index') }}" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Sub Category</span>
                             </a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-email.html">Add Sub Category</a></li>
-                                <li><a href="app-email-detail.html">Manage Sub Category</a></li>
-                            </ul>
                         </li>
                         <li> 
                             <a class="waves-effect waves-dark {{ request()->is('Brand*') ? 'active' : '' }}" href="{{ route('brand.index') }}" aria-expanded="false">

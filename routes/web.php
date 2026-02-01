@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MyCommerceController::class, 'index'])->name('home');
@@ -36,6 +37,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('status/{id}', [CategoryController::class, 'status'])->name('status');
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete');
     });
+
+    //add Sub Category module
+    Route::prefix('sub-category')->name('sub-category.')->group(function () {
+        Route::get('', [SubCategoryController::class, 'index'])->name('index');
+        Route::get('create', [SubCategoryController::class, 'create'])->name('create');
+        Route::post('store', [SubCategoryController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [SubCategoryController::class, 'edit'])->name('edit');
+        Route::post('update', [SubCategoryController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [SubCategoryController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [SubCategoryController::class, 'delete'])->name('delete');
+    });
+
 
     //add brand module
     Route::prefix('brand')->name('brand.')->group(function () {
