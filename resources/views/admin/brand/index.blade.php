@@ -1,6 +1,13 @@
 @extends('admin.master')
 
 @section('body')
+    @if (session('message'))
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            {{ session('message') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
+
 
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
@@ -25,7 +32,8 @@
                         </div>
                         <div class="col-md-7 align-self-center text-end">
                             <div class="d-flex justify-content-end align-items-center">
-                                <a href="{{ route('brand.create') }}" type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i
+                                <a href="{{ route('brand.create') }}" type="button"
+                                    class="btn btn-info d-none d-lg-block m-l-15 text-white"><i
                                         class="fa fa-plus-circle"></i> Create New</a>
                             </div>
                         </div>
@@ -64,13 +72,12 @@
                                                 </a>
                                             @endif
 
-                                            <a href="{{ route('brand.edit', $brand->id) }}"
-                                                class="btn btn-info btn-sm">
+                                            <a href="{{ route('brand.edit', $brand->id) }}" class="btn btn-info btn-sm">
                                                 <i class="ti-pencil"></i>
                                             </a>
 
                                             <a href="{{ route('brand.delete', $brand->id) }}"
-                                                class="btn btn-danger btn-sm">
+                                                class="btn btn-danger btn-sm" onclick="return confirm('Are You Sure?');">
                                                 <i class="ti-trash"></i>
                                             </a>
                                         </td>
