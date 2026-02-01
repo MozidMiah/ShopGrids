@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group row m-b-0">
                             <div class="offset-sm-3 col-sm-9">
-                                <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create New Category</button>
+                                <button type="submit" class="btn btn-success waves-effect waves-light text-white">Update New Category</button>
                             </div>
                         </div>
                     </form>
