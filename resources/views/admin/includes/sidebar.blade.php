@@ -7,32 +7,37 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> 
+                        <li>
                             <a class="waves-effect waves-dark" href="{{ route('dashboard') }}" aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                         <li> 
-                            <a class="waves-effect waves-dark {{ request()->is('category*') ? 'active' : '' }}" href="{{ route('category.index') }}" aria-expanded="false">
+                        <li>
+                            <a class="waves-effect waves-dark {{ request()->is('category*') ? 'active' : '' }}"
+                                href="{{ route('category.index') }}" aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Manage Category</span>
                             </a>
                         </li>
-                        <li> 
-                            <a class="waves-effect waves-dark {{ request()->is('sub-category*') ? 'active' : '' }}" href="{{ route('sub-category.index') }}" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="waves-effect waves-dark {{ request()->is('sub-category*') ? 'active' : '' }}"
+                                href="{{ route('sub-category.index') }}" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Sub Category</span>
                             </a>
                         </li>
-                        <li> 
-                            <a class="waves-effect waves-dark {{ request()->is('Brand*') ? 'active' : '' }}" href="{{ route('brand.index') }}" aria-expanded="false">
+                        <li>
+                            <a class="waves-effect waves-dark {{ request()->is('Brand*') ? 'active' : '' }}"
+                                href="{{ route('brand.index') }}" aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Manage Brand</span>
                             </a>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-layout-media-right-alt"></i>
                                 <span class="hide-menu">Unit Module</span>
                             </a>
@@ -41,8 +46,9 @@
                                 <li><a href="form-layout.html">Manage Unit</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-layout-accordion-merged"></i>
                                 <span class="hide-menu">Product Module</span>
                             </a>
@@ -51,8 +57,9 @@
                                 <li><a href="table-layout.html">Manage Product</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-settings"></i>
                                 <span class="hide-menu">Order</span>
                             </a>
@@ -60,8 +67,9 @@
                                 <li><a href="widget-data.html">Manage Order</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-gallery"></i>
                                 <span class="hide-menu">Customer Module</span>
                             </a>
@@ -69,8 +77,9 @@
                                 <li><a href="layout-single-column.html">Manage Customer</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-files"></i><span class="hide-menu">User Module</span>
                             </a>
                             <ul aria-expanded="false" class="collapse">
@@ -78,8 +87,9 @@
                                 <li><a href="pages-blank.html">Manage User</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-pie-chart"></i>
                                 <span class="hide-menu">Cupon Module</span>
                             </a>
@@ -88,8 +98,9 @@
                                 <li><a href="chart-chartist.html">Manage Cupon</a></li>
                             </ul>
                         </li>
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
                                 <i class="ti-light-bulb"></i>
                                 <span class="hide-menu">Setting Module</span>
                             </a>

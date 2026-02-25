@@ -38,7 +38,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete');
     });
 
-    //add Sub Category module
+    //add Sub Category 
     Route::prefix('sub-category')->name('sub-category.')->group(function () {
         Route::get('', [SubCategoryController::class, 'index'])->name('index');
         Route::get('create', [SubCategoryController::class, 'create'])->name('create');
@@ -52,7 +52,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     });
 
 
-    //add brand module
+    //add brand 
     Route::prefix('brand')->name('brand.')->group(function () {
         Route::get('', [BrandController::class, 'index'])->name('index');
         Route::get('create', [BrandController::class, 'create'])->name('create');
